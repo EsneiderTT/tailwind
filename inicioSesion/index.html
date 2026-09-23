@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FastFood - Iniciar sesión</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        naranja: "#ff9f0a",
+                        fondo: "#080808",
+                        tarjeta: "#181818",
+                        input: "#090909"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-fondo text-white flex items-center justify-center p-2 sm:p-4">
+
+    <main
+        class="w-full max-w-[1220px] min-h-[780px] 
+               bg-[#090909] 
+               border border-[#252525] 
+               rounded-[24px] 
+               overflow-hidden
+               relative"
+    >
+
+       
+        <header
+            class="h-[94px] 
+                   flex items-center 
+                   px-8 sm:px-10
+                   border-b border-[#222]"
+        >
+
+        <div class="flex items-center gap-3 sm:gap-4">
+
+            <div class="w-11 h-11 sm:w-13 sm:h-13 lg:w-14 lg:h-14
+                        rounded-full bg-naranja
+                        flex items-center justify-center
+                        text-2xl sm:text-3xl t">
+
+                <img src="img/image.png" alt="logo">
+
+            </div>
+        </header>
+
+
+        
+        <section
+            class="grid grid-cols-1 lg:grid-cols-2
+                   min-h-[685px]"
+        >
+
+           
+            <div
+                class="flex flex-col
+                       px-8 sm:px-12 lg:px-[88px]
+                       pt-14 sm:pt-20
+                       pb-10"
+            >
+
+                
+                <h2
+                    class="text-5xl sm:text-6xl
+                           font-bold
+                           leading-none
+                           mb-5"
+                >
+                    Fast<span class="text-naranja">Food</span>
+                </h2>
+
+                
+                <p
+                    class="text-2xl sm:text-[30px]
+                           leading-[1.55]
+                           text-gray-200
+                           max-w-[500px]
+                           mb-8"
+                >
+                    Sabor que te encanta,<br>
+                    pedidos que llegan.
+                </p>
+
+
+                <div
+                class="w-full
+                       max-w-[600px]
+                       h-[390px]
+                       overflow-hidden
+                       mt-1"
+            >
+                <img
+                    src="./img/image copy.png"
+                    alt="Hamburguesa Fast Food"
+                    class="w-full
+                           h-full
+                           object-cover
+                           object-center
+                           rounded-none"
+                >
+            </div>
+
+            </div>
+
+
+            
+            <div
+                class="flex items-center justify-center
+                       px-5 sm:px-10
+                       py-10
+                       lg:py-0"
+            >
+
+                
+                <div
+                    class="w-full max-w-[450px]
+                           bg-tarjeta
+                           border border-[#272727]
+                           rounded-[26px]
+                           px-8 sm:px-9
+                           py-9 sm:py-10"
+                >
+                    <h2
+                        class="text-center
+                               text-[40px]
+                               font-bold
+                               mb-12"
+                    >
+                        Iniciar iniciar
+                    </h2>
+
+
+                    
+                    <div class="mb-7">
+
+                        <label
+                            for="correo"
+                            class="block
+                                   text-[26px]
+                                   sm:text-[27px]
+                                   mb-2"
+                        >
+                            Correo electrónico
+                        </label>
+
+                        <div class="relative">
+
+                            <div
+                                class="absolute
+                                       left-5
+                                       top-1/2
+                                       -translate-y-1/2
+                                       text-gray-500"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="25"
+                                    height="25"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                >
+                                    
+                                </svg>
+                            </div>
+
+                            <input
+                                
+                                id="correo"
+                                type="email"
+                                placeholder="correo@gmail.com"
+                                
+                                class="w-full
+                                       h-[75px]
+                                       bg-input
+                                       border border-[#161616]
+                                       rounded-[14px]
+                                       pl-[62px]
+                                       pr-5
+                                       text-xl
+                                       text-white
+                                       placeholder-gray-500
+                                       outline-none
+                                       focus:border-naranja
+                                       transition
+                                       w-full text-right placeholder:text-left border p-2
+                            >
+
+                        </div>
+                    </div>
+
+                    <div class="mb-9">
+
+                        <label
+                            for="password"
+                            class="block
+                                   text-[26px]
+                                   sm:text-[27px]
+                                   mb-2"
+                        >
+                            Contraseña
+                        </label>
+
+                        <div class="relative">
+
+                            <!-- ICONO CANDADO -->
+                            <div
+                                class="absolute
+                                       left-5
+                                       top-1/2
+                                       -translate-y-1/2
+                                       text-gray-500"
+                            >
+                               
+                                
+                                    <rect
+                                        x="5"
+                                        y="10"
+                                        width="14"
+                                        height="11"
+                                        rx="2"
+                                    />
+                                    <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+                                </svg>
+                            </div>
+
+
+                            <input
+                                id="password"
+                                type="password"
+                                placeholder="Contraseña"
+                                class="w-full
+                                       h-[65px]
+                                       bg-input
+                                       border border-[#161616]
+                                       rounded-[14px]
+                                       pl-[62px]
+                                       pr-[60px]
+                                       text-xl
+                                       text-white
+                                       placeholder-gray-500
+                                       outline-none
+                                       focus:border-naranja
+                                       transition"
+                            >
+
+
+                            <!-- MOSTRAR CONTRASEÑA -->
+                            <button
+                                type="button"
+                                onclick="mostrarPassword()"
+                                class="absolute
+                                       right-5
+                                       top-1/2
+                                       -translate-y-1/2
+                                       text-gray-500
+                                       hover:text-white
+                                       transition"
+                            
+
+                                
+                                >
+                                    <path
+                                        d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"
+                                    />
+                                    <circle cx="12" cy="12" r="2.5"/>
+                                </svg>
+
+                            </button>
+
+                        </div>
+                    </div>
+
+
+                    <button
+                        onclick="iniciarSesion()"
+                        class=" 
+                    
+                               w-full
+                               h-[66px]
+                               bg-gradient-to-r
+                               from-[#ffae17]
+                               to-[#ff9700]
+                               text-[#111]
+                               text-[24px]
+                               font-bold
+                               rounded-[13px]
+                               hover:scale-[1.02]
+                               active:scale-[0.98]
+                               shadow-lg
+                               shadow-orange-500/10
+                               transition-all
+                               duration-200"
+
+                    >
+                        Iniciar sesión
+                    </button>
+
+
+                    <div class="text-center mt-9">
+
+                        <p
+                            class="text-[21px]
+                                   text-gray-200
+                                   mb-2"
+                        >
+                            ¿No tienes una cuenta?
+                        </p>
+
+                        <a
+                            href="../registro/index.html"
+                            class="text-naranja
+                                   text-[21px]
+                                   font-bold
+                                   hover:text-orange-300
+                                   transition"
+                        >
+                            Registrarme
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        // Mostrar / ocultar contraseña
+        function mostrarPassword() {
+
+            const password = document.getElementById("password");
+
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
+
+
+        // Botón iniciar sesión
+        function iniciarSesion() {
+
+            const correo = document.getElementById("correo").value;
+            const password = document.getElementById("password").value;
+
+            if (correo === "" || password === "") {
+
+                alert("Por favor completa todos los campos.");
+                return;
+            }
+
+            alert("Inicio de sesión correcto.");
+        }
+
+    </script>
+
+</body>
+</html>

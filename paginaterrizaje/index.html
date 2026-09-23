@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastFood - Comida a tu gusto</title>
+
+    <script>
+        const navigation = performance.getEntriesByType("navigation")[0];
+        if (navigation && navigation.type === "reload") {
+            window.location.replace("../index.html");
+        }
+    </script>
+
+   
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fondo: '#080D12',
+                        fondo2: '#0B1016',
+                        tarjeta: '#10161C',
+                        naranja: '#FFA500',
+                        texto: '#F5F5F5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen w-full overflow-x-hidden bg-fondo text-texto font-sans">
+
+   
+    <header class="sticky top-0 z-50 w-full bg-[#080D12]/95 backdrop-blur-md border-b border-gray-800">
+        <div class="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-16 h-14 sm:h-16 lg:h-[72px] flex items-center justify-between">
+            <a href="#inicio" class="flex items-center gap-2 shrink-0">
+                <span class="text-lg sm:text-xl">🍔</span>
+                <span class="text-sm sm:text-base font-bold">
+                    <span class="text-naranja">Fast</span>Food
+                </span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-xs lg:text-sm text-gray-400">
+                <a href="#inicio" class="text-gray-200 hover:text-naranja transition">Inicio</a>
+                <a href="#menu" class="hover:text-naranja transition">Menú</a>
+                <a href="#como-funciona" class="hover:text-naranja transition">¿Cómo funciona?</a>
+                <a href="#contacto" class="hover:text-naranja transition">Contacto</a>
+            </nav>
+
+            <button id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+                    class="md:hidden w-9 h-9 rounded border border-gray-700 flex flex-col items-center justify-center gap-1.5 hover:border-naranja transition">
+                <span class="block w-4 h-px bg-gray-300"></span>
+                <span class="block w-4 h-px bg-gray-300"></span>
+                <span class="block w-4 h-px bg-gray-300"></span>
+            </button>
+        </div>
+
+      
+        <div id="mobileMenu" class="hidden md:hidden border-t border-gray-800 bg-[#080D12]">
+            <nav class="px-5 py-4 flex flex-col gap-1">
+                <a href="#inicio" class="px-3 py-3 rounded text-sm text-gray-300 hover:bg-[#10161C] hover:text-naranja">🏠 Inicio</a>
+                <a href="#menu" class="px-3 py-3 rounded text-sm text-gray-300 hover:bg-[#10161C] hover:text-naranja">🍔 Menú</a>
+                <a href="#como-funciona" class="px-3 py-3 rounded text-sm text-gray-300 hover:bg-[#10161C] hover:text-naranja">⚡ ¿Cómo funciona?</a>
+                <a href="#contacto" class="px-3 py-3 rounded text-sm text-gray-300 hover:bg-[#10161C] hover:text-naranja">📞 Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        
+        <section id="inicio" class="bg-[#0A0F14] border-b border-gray-900">
+            <div class="w-full px-5 sm:px-8 lg:px-10 xl:px-14 2xl:px-20 py-12 sm:py-14 lg:py-16 xl:py-20">
+                <div class="w-full min-h-[260px] lg:min-h-[300px] flex items-center justify-between gap-8 lg:gap-16">
+
+                    <div class="max-w-xl">
+                        <p class="text-naranja text-[10px] sm:text-xs font-bold uppercase tracking-wide mb-3">
+                            • TU COMIDA, A TU MANERA
+                        </p>
+
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-[1.05] font-bold tracking-tight">
+                            Tu comida Favorita,
+                            <br>
+                            <span class="text-naranja">justo como</span> la quieres
+                        </h1>
+
+                        <p class="text-gray-400 text-xs sm:text-sm lg:text-base leading-5 sm:leading-6 max-w-md mt-4">
+                            Elige tus productos, personaliza tus ingredientes y disfruta de una experiencia rápida y sencilla.
+                        </p>
+
+                        <div class="flex flex-wrap gap-2.5 mt-5">
+                            <a href="../inicioSesion/index.html"
+                               class="bg-naranja text-black text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-md hover:bg-yellow-400 transition">
+                                Iniciar sesión
+                            </a>
+                            <a href="../registro/index.html"
+                               class="border border-naranja text-naranja text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-md hover:bg-naranja hover:text-black transition">
+                                Registrarse
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hidden sm:flex shrink-0 w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 xl:w-60 xl:h-60 rounded-full border-2 border-naranja items-center justify-center animate-pulse">
+                        <img src="./css/logo.png" alt="FastFood" class="w-[86%] h-[86%] object-contain">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="bg-[#0B1016] border-b border-gray-900">
+            <div class="w-full px-5 sm:px-8 lg:px-10 xl:px-14 2xl:px-20 py-4 sm:py-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 lg:gap-4">
+
+                    <div class="min-h-[78px] sm:min-h-[86px] bg-[#10161C] hover:border border-orange-300 rounded-lg flex flex-col items-center justify-center text-center px-3 py-3">
+                        <span class="text-naranja text-xl leading-none">⚡</span>
+                        <h3 class="text-xs font-bold mt-1.5">Pedidos rápidos</h3>
+                        <p class="text-[10px] text-gray-500 mt-1">Realiza tu pedido de manera sencilla.</p>
+                    </div>
+
+                    <div class="min-h-[78px] sm:min-h-[86px] bg-[#10161C] hover:border border-orange-300 rounded-lg flex flex-col items-center justify-center text-center px-3 py-3">
+                        <span class="text-naranja text-xl leading-none">🍔</span>
+                        <h3 class="text-xs font-bold mt-1.5">A tu gusto</h3>
+                        <p class="text-[10px] text-gray-500 mt-1">Personaliza los ingredientes de tu comida.</p>
+                    </div>
+
+                    <div class="min-h-[78px] sm:min-h-[86px] bg-[#10161C] hover:border border-orange-300 rounded-lg flex flex-col items-center justify-center text-center px-3 py-3">
+                        <span class="text-naranja text-xl leading-none">💳</span>
+                        <h3 class="text-xs font-bold mt-1.5">Pago seguro</h3>
+                        <p class="text-[10px] text-gray-500 mt-1">Utiliza diferentes métodos de pago.</p>
+                    </div>
+
+                    <div class="min-h-[78px] sm:min-h-[86px] bg-[#10161C] hover:border border-orange-300 rounded-lg flex flex-col items-center justify-center text-center px-3 py-3">
+                        <span class="text-naranja text-xl leading-none">📦</span>
+                        <h3 class="text-xs font-bold mt-1.5">Seguimiento</h3>
+                        <p class="text-[10px] text-gray-500 mt-1">Consulta el estado de tu pedido.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <section id="menu" class="bg-[#080D12] border-b border-gray-900">
+            <div class="w-full px-5 sm:px-8 lg:px-10 xl:px-14 2xl:px-20 py-8 sm:py-9 lg:py-10">
+                <div class="text-center mb-6">
+                    <p class="text-naranja text-[10px] sm:text-xs font-bold uppercase">DESCUBRE NUESTRO MENÚ</p>
+                    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold mt-1">Productos destacados</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5">
+
+                    <article class="bg-[#0B1016] border border-gray-900 rounded-lg overflow-hidden hover:-translate-y-2">
+                        <div class="h-12 sm:h-14 lg:h-16 bg-naranja flex items-center justify-center ">
+                            <span class="text-2xl sm:text-3xl ">🍔</span>
+                        </div>
+                        <div class="p-3 sm:p-4">
+                            <h3 class="text-xs sm:text-sm font-bold">Hamburguesa Especial</h3>
+                            <p class="text-[10px] sm:text-xs text-gray-500 mt-1.5 leading-4">
+                                Carne, queso, lechuga, tomate y nuestra salsa especial.
+                            </p>
+                            <div class="flex items-center justify-between mt-3">
+                                <strong class="text-naranja text-xs sm:text-sm">$18.000</strong>
+                                <button onclick="agregarProducto('Hamburguesa Especial')" class="bg-naranja text-black text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded hover:bg-yellow-400 transition">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-[#0B1016] border border-gray-900 rounded-lg overflow-hidden hover:-translate-y-2">
+                        <div class="h-12 sm:h-14 lg:h-16 bg-naranja flex items-center justify-center">
+                            <span class="text-2xl sm:text-3xl">🌭</span>
+                        </div>
+                        <div class="p-3 sm:p-4">
+                            <h3 class="text-xs sm:text-sm font-bold">Perro Especial</h3>
+                            <p class="text-[10px] sm:text-xs text-gray-500 mt-1.5 leading-4">
+                                Salchicha, queso, papas, salsas y toppings a tu elección.
+                            </p>
+                            <div class="flex items-center justify-between mt-3">
+                                <strong class="text-naranja text-xs sm:text-sm">$15.000</strong>
+                                <button onclick="agregarProducto('Perro Especial')" class="bg-naranja text-black text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded hover:bg-yellow-400 transition">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-[#0B1016] border border-gray-900 rounded-lg overflow-hidden hover:-translate-y-2">
+                        <div class="h-12 sm:h-14 lg:h-16 bg-naranja flex items-center justify-center">
+                            <span class="text-2xl sm:text-3xl">🍟</span>
+                        </div>
+                        <div class="p-3 sm:p-4">
+                            <h3 class="text-xs sm:text-sm font-bold">Combo Familiar</h3>
+                            <p class="text-[10px] sm:text-xs text-gray-500 mt-1.5 leading-4">
+                                Hamburguesas, papas y bebidas para compartir.
+                            </p>
+                            <div class="flex items-center justify-between mt-3">
+                                <strong class="text-naranja text-xs sm:text-sm">$35.000</strong>
+                                <button onclick="agregarProducto('Combo Familiar')" class="bg-naranja text-black text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded hover:bg-yellow-400 transition">Agregar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="como-funciona" class="bg-[#10161C] border-b border-gray-900">
+            <div class="w-full px-5 sm:px-8 lg:px-10 xl:px-14 2xl:px-20 py-9 sm:py-10 lg:py-12">
+                <div class="text-center mb-7 sm:mb-8">
+                    <p class="text-naranja text-[10px] sm:text-xs font-bold">FÁCIL Y RÁPIDO</p>
+                    <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold mt-1">¿Cómo funciona?</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-5xl mx-auto ">
+                    <div class="text-center">
+                        <div class="w-10 h-10 mx-auto rounded-full bg-naranja text-black font-bold flex items-center justify-center hover:animate-bounce">1</div>
+                        <h3 class="text-xs sm:text-sm font-bold mt-2">Elige</h3>
+                        <p class="text-[10px] sm:text-xs text-gray-500 leading-4 mt-1">Selecciona la comida que quieres.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 mx-auto rounded-full bg-naranja text-black font-bold flex items-center justify-center hover:animate-bounce">2</div>
+                        <h3 class="text-xs sm:text-sm font-bold mt-2">Personaliza</h3>
+                        <p class="text-[10px] sm:text-xs text-gray-500 leading-4 mt-1">Agrega o elimina ingredientes.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 mx-auto rounded-full bg-naranja text-black font-bold flex items-center justify-center hover:animate-bounce">3</div>
+                        <h3 class="text-xs sm:text-sm font-bold mt-2">Confirma</h3>
+                        <p class="text-[10px] sm:text-xs text-gray-500 leading-4 mt-1">Revisa tu pedido y realiza el pago.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-10 h-10 mx-auto rounded-full bg-naranja text-black font-bold flex items-center justify-center hover:animate-bounce">4</div>
+                        <h3 class="text-xs sm:text-sm font-bold mt-2">Disfruta</h3>
+                        <p class="text-[10px] sm:text-xs text-gray-500 leading-4 mt-1">Recibe tu pedido y disfruta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+        <section class="w-full overflow-hidden bg-[#080d11] py-6">
+
+            <div class="flex w-max animate-marquee whitespace-nowrap">
+        
+                <div class="mx-10 flex items-center gap-4">
+                    <span class="text-[#FFA500] font-black text-sm">
+                        🔥 PROMOCIÓN DEL DÍA
+                    </span>
+        
+                    <span class="text-white text-xl font-black">
+                        ¡Tu combo favorito!
+                    </span>
+        
+                    <span class="text-[#FFA500] text-xl font-black">
+                        20% DE DESCUENTO
+                    </span>
+        
+                    <span class="text-white/50">
+                        •
+                    </span>
+        
+                    <span class="text-white/70 text-sm">
+                        Aprovecha nuestra promoción especial
+                    </span>
+                </div>
+        
+                <!-- Repetición -->
+                <div class="mx-10 flex items-center gap-4">
+                    <span class="text-[#FFA500] font-black text-sm">
+                        🔥 PROMOCIÓN DEL DÍA
+                    </span>
+        
+                    <span class="text-white text-xl font-black">
+                        ¡Tu combo favorito!
+                    </span>
+        
+                    <span class="text-[#FFA500] text-xl font-black">
+                        20% DE DESCUENTO
+                    </span>
+        
+                    <span class="text-white/50">
+                        •
+                    </span>
+        
+                    <span class="text-white/70 text-sm">
+                        Aprovecha nuestra promoción especial
+                    </span>
+                </div>
+                <div class="mx-10 flex items-center gap-4">
+                    <span class="text-[#FFA500] font-black text-sm">
+                        🔥 PROMOCIÓN DEL DÍA
+                    </span>
+        
+                    <span class="text-white text-xl font-black">
+                        ¡Tu combo favorito!
+                    </span>
+        
+                    <span class="text-[#FFA500] text-xl font-black">
+                        20% DE DESCUENTO
+                    </span>
+        
+                    <span class="text-white/50">
+                        •
+                    </span>
+        
+                    <span class="text-white/70 text-sm">
+                        Aprovecha nuestra promoción especial
+                    </span>
+                </div>
+        
+            </div>
+        
+        </section>
+
+       
+        <section class="bg-[#10161C] border-y border-gray-900">
+            <div class="w-full px-5 sm:px-8 lg:px-10 xl:px-14 2xl:px-20 py-7 sm:py-8 text-center">
+                <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold">¿Ya sabes qué quieres comer?</h2>
+                <p class="text-gray-500 text-xs sm:text-sm mt-2">Haz tu pedido ahora y disfruta de nuestra comida.</p>
+            </div>
+        </section>
+
+    </main>
+
+  
+    <footer id="contacto" class="bg-[#070B0F]">
+        <div class="w-full px-5 sm:px-8 lg:px-10 xl:px-14 2xl:px-20 py-7 sm:py-8 text-center">
+            <div class="flex items-center justify-center gap-2">
+                <span class="text-lg">🍔</span>
+                <span class="text-sm sm:text-base font-bold"><span class="text-naranja">Fast</span>Food</span>
+            </div>
+            <p class="text-gray-500 text-xs mt-2">Si querés venir, vení</p>
+            <div class="flex flex-col gap-1 mt-3 text-gray-500 text-[10px] sm:text-xs">
+                <p>📱 WhatsApp: +57 3107554934</p>
+                <p>📍 Garzón, Huila</p>
+                <p>🕐 Lunes - Domingo: 10:00 AM - 10:00 PM</p>
+                <p class="text-naranja">Instagram · Facebook · WhatsApp</p>
+            </div>
+            <hr class="border-gray-900 my-4">
+            <p class="text-gray-600 text-[9px] sm:text-[10px]">© 2026 FastFood. Devoloped by pitimay</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle?.addEventListener('click', () => {
+            const abierto = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden', abierto);
+            menuToggle.setAttribute('aria-expanded', String(!abierto));
+        });
+
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        function agregarProducto(nombre) {
+            alert(nombre + ' agregado al pedido.');
+        }
+    </script>
+</body>
+</html>
