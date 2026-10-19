@@ -1,24 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Registro - FastFood</title>
+    <title>FastFood - Registro </title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Configuración de Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        naranja: "#FFA612",
+                        naranja: "#ff9f0a",
                         fondo: "#080808",
                         tarjeta: "#181818",
-                        input: "#080808"
+                        input: "#090909"
                     }
                 }
             }
@@ -26,255 +26,201 @@
     </script>
 </head>
 
-<body class="min-h-screen bg-fondo text-white flex items-center justify-center p-4">
+<body class="min-h-screen bg-fondo text-white flex items-center justify-center p-2 sm:p-4">
 
-    <!-- CONTENEDOR PRINCIPAL -->
-    <main class="w-full max-w-[960px] min-h-[650px] border border-[#272727]
-                rounded-[20px] overflow-hidden bg-[#090909]">
+    <main class="w-full max-w-[1220px] min-h-[780px]
+                 bg-[#090909] border border-[#252525]
+                 rounded-[24px] overflow-hidden relative">
 
-        <!-- BARRA SUPERIOR -->
-        <header class="h-[74px] border-b border-[#242424]
-                       flex items-center px-8">
+        <!-- ENCABEZADO -->
+        <header class="h-[94px] flex items-center px-6 sm:px-10 border-b border-[#222]">
 
-            <!-- LOGO -->
-            <img
-                src="img/image.png"
-                alt="Logo FastFood"
-                class="w-[48px] h-[48px] object-contain"
-            >
+            <div class="flex items-center gap-3">
 
-        </header>
+                <div class="w-12 h-12 sm:w-14 sm:h-14
+                            rounded-full bg-naranja
+                            flex items-center justify-center overflow-hidden">
 
-
-        <!-- CONTENIDO -->
-        <section class="grid grid-cols-1 md:grid-cols-2
-                        gap-8 px-8 md:px-16
-                        py-8 md:py-0
-                        min-h-[575px]">
-
-
-            <!-- ========================= -->
-            <!-- LADO IZQUIERDO -->
-            <!-- ========================= -->
-
-            <div class="flex flex-col justify-center">
-
-                <!-- TÍTULO -->
-                <h1 class="text-4xl md:text-[44px] font-bold tracking-tight">
-                    Fast<span class="text-naranja">Food</span>
-                </h1>
-
-                <!-- DESCRIPCIÓN -->
-                <p class="text-white text-xl md:text-[22px]
-                          leading-relaxed mt-3">
-
-                    Sabor que te encanta,<br>
-                    pedidos que llegan.
-
-                </p>
-
-
-                
-                <!-- IMAGEN -->
-                <div class="hidden md:block mt-7">
-                
-                    <img
-                        src="img/fondo.jpeg"
-                        alt="Hamburguesa"
-                        class="w-full max-w-[350px]
-                               h-[310px]
-                               object-cover"
-                    >
-                
+                    <img src="img/image.png"
+                         alt="Logo FastFood"
+                         class="w-full h-full object-contain">
                 </div>
-                
 
             </div>
 
+        </header>
 
-            <!-- ========================= -->
-            <!-- FORMULARIO -->
-            <!-- ========================= -->
+        <!-- CONTENIDO PRINCIPAL -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 min-h-[685px]">
 
-            <div class="flex items-center
-            justify-center md:justify-end
-            w-full">
+            <!-- COLUMNA IZQUIERDA: OCULTA EN CELULARES -->
+            <div class="hidden lg:flex flex-col px-12 xl:px-[88px] pt-20 pb-10">
 
-                        <div class="w-full
-                        bg-tarjeta
-                        border border-[#272727]
-                        rounded-[22px]
-                        px-7 py-10">
+                <h2 class="text-5xl xl:text-6xl font-bold leading-none mb-5">
+                    Fast<span class="text-naranja">Food</span>
+                </h2>
 
-                    <!-- TÍTULO -->
-                    <h2 class="text-center
-                               text-3xl
-                               font-bold
-                               mb-10">
+                <p class="text-2xl xl:text-[30px] leading-[1.55]
+                          text-gray-200 max-w-[500px] mb-8">
+                    Sabor que te encanta,<br>
+                    pedidos que llegan.
+                </p>
 
-                        Registro
+                <div class="w-full max-w-[600px] h-[390px] overflow-hidden mt-1">
 
+                    <img src="./img/fondo.jpeg"
+                         alt="Hamburguesa FastFood"
+                         class="w-full h-full object-cover object-center">
+
+                </div>
+
+            </div>
+
+            <!-- COLUMNA DERECHA: FORMULARIO MÁS ANCHO -->
+            <div class="flex items-center justify-center
+                        px-4 sm:px-8 lg:pl-4 lg:pr-8
+                        py-10 lg:py-8">
+
+                <div class="w-full max-w-none
+                            bg-tarjeta border border-[#272727]
+                            rounded-[26px]
+                            px-5 sm:px-9 lg:px-10
+                            py-9 sm:py-10">
+
+                    <h2 class="text-center text-3xl sm:text-[40px]
+                               font-bold mb-10 sm:mb-12">
+                        Registrate
                     </h2>
 
-
-                    <!-- NOMBRE -->
-                    <div class="mb-6">
-
-                        <label class="block
-                                      text-[20px]
-                                      mb-2">
-
-                            Nombre Usuario
-
-                        </label>
-
-
-                        <div class="relative">
-
-                            
-                            </span>
-
-
-                            <input
-                                type="text"
-                                placeholder="Nombre Completo"
-                                class="w-full
-                                       h-[50px]
-                                       bg-input
-                                       rounded-[9px]
-                                       pl-12
-                                       pr-4
-                                       text-white
-                                       placeholder-gray-500
-                                       outline-none
-                                       focus:ring-2
-                                       focus:ring-naranja"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- CORREO -->
-                    <div class="mb-6">
-
-                        <label class="block
-                                      text-[20px]
-                                      mb-2">
-
-                            Correo electrónico
-
-                        </label>
-
-
-                        <div class="relative">
-
-
-
-                            <input
-                                type="email"
-                                placeholder="correo@gmail.com"
-                                class="w-full
-                                       h-[50px]
-                                       bg-input
-                                       rounded-[9px]
-                                       pl-12
-                                       pr-4
-                                       text-white
-                                       placeholder-gray-500
-                                       outline-none
-                                       focus:ring-2
-                                       focus:ring-naranja"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- CONTRASEÑA -->
                     <div class="mb-7">
 
-                        <label class="block
-                                      text-[20px]
-                                      mb-2">
-
-                            Contraseña
-
+                        <label for="texto"
+                               class="block text-xl sm:text-[26px] mb-2">
+                            Nombre Usuario
                         </label>
-
 
                         <div class="relative">
 
+                            <input
+                                id="usuario"
+                                type="text"
+                                placeholder="Nombre Usuario"
+                                class="w-full h-[65px] sm:h-[75px]
+                                       bg-input border border-[#303030]
+                                       rounded-[14px]
+                                       px-5 text-base sm:text-xl text-white
+                                       placeholder-gray-500 outline-none
+                                       focus:border-naranja transition">
+                        </div>
 
+                    </div>
+
+                    <!-- CORREO -->
+                    <div class="mb-7">
+
+                        <label for="correo"
+                               class="block text-xl sm:text-[26px] mb-2">
+                            Correo electrónico
+                        </label>
+
+                        <div class="relative">
 
                             <input
+                                id="correo"
+                                type="email"
+                                placeholder="correo@gmail.com"
+                                class="w-full h-[65px] sm:h-[75px]
+                                       bg-input border border-[#303030]
+                                       rounded-[14px]
+                                       px-5 text-base sm:text-xl text-white
+                                       placeholder-gray-500 outline-none
+                                       focus:border-naranja transition">
+                        </div>
+
+                    </div>
+
+                    <!-- CONTRASEÑA -->
+                    <div class="mb-8">
+
+                        <label for="password"
+                               class="block text-xl sm:text-[26px] mb-2">
+                            Contraseña
+                        </label>
+
+                        <div class="relative">
+
+                            <input
+                                id="password"
                                 type="password"
                                 placeholder="Contraseña"
-                                class="w-full
-                                       h-[50px]
-                                       bg-input
-                                       rounded-[9px]
-                                       pl-12
-                                       pr-12
-                                       text-white
-                                       placeholder-gray-500
-                                       outline-none
-                                       focus:ring-2
-                                       focus:ring-naranja"
-                            >
-                            
+                                class="w-full h-[65px] sm:h-[75px]
+                                       bg-input border border-[#303030]
+                                       rounded-[14px]
+                                       pl-5 pr-16 text-base sm:text-xl
+                                       text-white placeholder-gray-500
+                                       outline-none focus:border-naranja transition">
+
+                            <button
+                                type="button"
+                                onclick="mostrarPassword()"
+                                class="absolute right-4 top-1/2
+                                       -translate-y-1/2 text-gray-400
+                                       hover:text-naranja transition"
+                                aria-label="Mostrar u ocultar contraseña">
+
+                                <svg id="iconoPassword"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     width="25" height="25"
+                                     viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor"
+                                     stroke-width="1.8"
+                                     stroke-linecap="round"
+                                     stroke-linejoin="round">
+
+                                    <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+
+                                </svg>
+
+                            </button>
 
                         </div>
 
                     </div>
 
-
-                    <!-- BOTÓN REGISTRAR -->
+                    <!-- BOTÓN -->
                     <button
-                        type="submit"
-                        class="w-full
-                               h-[52px]
-                               bg-naranja
-                               hover:bg-[#ffb52f]
-                               text-black
-                               font-bold
-                               text-[18px]
-                               rounded-[9px]
-                               transition
-                               duration-200
-                               hover:scale-[1.01]">
+                        type="button"
+                        onclick="iniciarSesion()"
+                        class="w-full h-[66px]
+                               bg-gradient-to-r from-[#ffae17] to-[#ff9700]
+                               text-[#111] text-xl sm:text-[24px]
+                               font-bold rounded-[13px]
+                               hover:scale-[1.02] active:scale-[0.98]
+                               shadow-lg shadow-orange-500/10
+                               transition-all duration-200">
 
-                        Registrar
+                        Iniciar sesión
 
                     </button>
 
+                    <!-- REGISTRO -->
+                    <div class="text-center mt-8 sm:mt-9">
 
-                    <!-- TEXTO -->
-                    <p class="text-center
-                              text-white
-                              mt-7">
+                        <p class="text-base sm:text-[21px]
+                                  text-gray-200 mb-2">
+                            ¿No tienes una cuenta?
+                        </p>
 
-                        ¿Ya tienes una cuenta?
+                        <a href="../inicioSesion/index.html"
+                           class="text-naranja text-lg sm:text-[21px]
+                                  font-bold hover:text-orange-300 transition">
 
-                    </p>
+                            Iniciar Sesión
 
+                        </a>
 
-                    <!-- INICIAR SESIÓN -->
-                    <a
-                        href="../inicioSesion/index.html"
-                        class="block
-                               text-center
-                               text-naranja
-                               font-bold
-                               mt-6
-                               hover:text-[#ffbe4d]
-                               transition">
-
-                        Iniciar Sesion
-
-                    </a>
+                    </div>
 
                 </div>
 
@@ -283,6 +229,90 @@
         </section>
 
     </main>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Mostrar u ocultar contraseña
+        function mostrarPassword() {
+
+            const password = document.getElementById("password");
+            const icono = document.getElementById("iconoPassword");
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                icono.innerHTML = `
+                    <path d="M3 3l18 18"/>
+                    <path d="M10.6 10.6a2 2 0 002.8 2.8"/>
+                    <path d="M9.9 5.2A10.8 10.8 0 0112 5
+                    c6.4 0 10 7 10 7a15.8 15.8 0 01-4 4.8"/>
+                    <path d="M6.6 6.6C3.6 8.5 2 12 2 12
+                    s3.6 7 10 7c1 0 2-.2 2.9-.5"/>
+                `;
+
+            } else {
+
+                password.type = "password";
+
+                icono.innerHTML = `
+                    <path d="M2 12s3.6-7 10-7 10 7 10 7
+                    -3.6 7-10 7-10-7-10-7z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                `;
+
+            }
+
+        }
+
+        // Validar inicio de sesión
+        function iniciarSesion() {
+
+            const correo = document.getElementById("correo").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            if (correo === "" || password === "") {
+
+                alert("Por favor completa todos los campos.");
+                return;
+
+            }
+
+            if (!correo.includes("@")) {
+
+                alert("Por favor ingresa un correo electrónico válido.");
+                return;
+
+            }
+
+            // Verificar si existe una cuenta guardada
+            const usuarioGuardado = JSON.parse(localStorage.getItem("usuario"));
+
+            if (!usuarioGuardado) {
+
+                alert("No existe una cuenta. Regístrate primero.");
+                return;
+
+            }
+
+            if (
+                usuarioGuardado.correo === correo &&
+                usuarioGuardado.password === password
+            ) {
+
+                alert("Inicio de sesión correcto.");
+                window.location.href = "inicio.html";
+
+            } else {
+
+                alert("Correo o contraseña incorrectos.");
+
+            }
+
+        }
+
+    </script>
 
 </body>
 </html>
